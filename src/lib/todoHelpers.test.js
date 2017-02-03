@@ -1,6 +1,6 @@
 import {addTodo, findById, toggleTodo, updateTodo} from './todoHelpers';
 
-test('addTodo shousd add the passed todo to the list', () => {
+test('addTodo should add the passed todo to the list', () => {
 	
 	const startTodos = [
 		{id:1, name:'one', isComplete: false},
@@ -19,7 +19,7 @@ test('addTodo shousd add the passed todo to the list', () => {
 	expect(result).toEqual(expected);
 })
 
-test('addTodo shousd not mutate the existing todo array', () => {
+test('addTodo should not mutate the existing todo array', () => {
 	
 	const startTodos = [
 		{id:1, name:'one', isComplete: false},
