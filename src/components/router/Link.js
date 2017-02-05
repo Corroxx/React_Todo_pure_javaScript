@@ -12,8 +12,9 @@ handleClick = (evt) =>{
     this.context.linkHandler(this.props.to)
 }
     render () {
+        const activeClass = this.context.route === this.props.to ? 'active' : ''
         return (
-            <a href='#' onClick={this.handleClick}>{this.props.children}</a>
+            <a href='#' className={activeClass}  onClick={this.handleClick}>{this.props.children}</a>
         )
     }
 }
