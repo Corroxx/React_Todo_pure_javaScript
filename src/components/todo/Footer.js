@@ -9,4 +9,4 @@ export const Footer = (props) => {
             <Link to="/complete">Complete</Link>
         </div>
     )
-}   
+}
