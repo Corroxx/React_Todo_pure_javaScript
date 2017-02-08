@@ -12,7 +12,7 @@ export const EducationItem =(props) => {
           defaultChecked={props.participate}
           type="checkbox"/>
       </td>
-      <td><span>{props.changeable ? "Änderung möglich" : "Umfrage abgeschlossen"}</span></td>
+      <td><span className={props.changeable ? "open" : "close"}>{props.changeable ? "Änderung möglich" : "Umfrage abgeschlossen"}</span></td>
     </tr>
 
   )

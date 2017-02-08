@@ -53,6 +53,13 @@ th, td {
 td.Edu-checkin {
     text-align: center;
 }
+td span.open {
+    color: green;
+}
+
+td span.close {
+    color: red;
+}
 
 li span.delete-item {
     visibility: hidden;
