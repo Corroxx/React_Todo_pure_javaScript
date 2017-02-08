@@ -7,12 +7,17 @@ export const EducationItem =(props) => {
       <td>{props.date}</td>
       <td>{props.location}</td>
       <td>{props.name}</td>
-      <td className="Edu-checkin"><input
+      <td className="Edu-checkin">
+          <input
+          disabled={props.changeable ? '' : "disabled"}
           onChange={()=> handleToggle(props.id)}
           defaultChecked={props.participate}
           type="checkbox"/>
       </td>
-      <td><span className={props.changeable ? "open" : "close"}>{props.changeable ? "Änderung möglich" : "Umfrage abgeschlossen"}</span></td>
+      <td><span
+            className={props.changeable ? "open" : "close"}>
+          {props.changeable ? "Änderung möglich" : "Umfrage abgeschlossen"}
+      </span></td>
     </tr>
 
   )
