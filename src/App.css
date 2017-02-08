@@ -25,19 +25,33 @@
 .Todo-App {
   padding-top: 20px;
   display: inline-block;
-  text-align: left;
+  text-align: center;
 }
 
 input {
   font-size: 20px;
 }
 
-ul {
-  padding: 0px;
+table {
+        border-collapse: collapse;
+        margin-top: 10px;
 }
 
-li {
-  list-style-type: none;
+thead {
+  text-align: left;
+}
+
+tbody {
+    text-align: left;
+}
+
+th, td {
+    border-bottom:  1px solid grey;
+     padding: 15px;
+}
+
+td.Edu-checkin {
+    text-align: center;
 }
 
 li span.delete-item {
