@@ -4,7 +4,7 @@ export const EducationForm= (props) => {
     return (
       <div>
         <form>
-          <input onChange={props.handleInputChange} type="text"></input>
+          <input  placeholder="Suche" onChange={props.handleInputChange} type="text"></input>
         </form>
       </div>
     )
