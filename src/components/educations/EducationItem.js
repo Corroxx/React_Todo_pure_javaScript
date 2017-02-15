@@ -20,7 +20,7 @@ export const EducationItem =(props) => {
             className={props.changeable ? "open" : "close"}>
           {props.changeable ? "Änderung möglich" : "Umfrage abgeschlossen"}
       </span></td>
-      <td className="Remove-Row"><span onClick={() => handleRemove(props.id)}>X</span></td>
+      <td className="Remove-Row"><span className="delete-item" onClick={() => handleRemove(props.id)}>X</span></td>
 
     </tr>
 

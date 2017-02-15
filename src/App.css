@@ -49,6 +49,17 @@ th, td {
     border-bottom:  1px solid grey;
      padding: 15px;
 }
+tbody tr:hover {
+    background-color: lightgrey;
+}
+ span.delete-item{
+    visibility: hidden;
+    color: red
+}
+
+tr:hover span.delete-item{
+    visibility: visible;
+}
 
 td.Edu-checkin {
     text-align: center;
@@ -61,18 +72,6 @@ td span.close {
     color: red;
 }
 
-li span.delete-item {
-    visibility: hidden;
-}
-
-span.delete-item a {
-    text-decoration: none;
-    color: red;
-}
-
-li:hover span.delete-item {
-    visibility: visible;
-}
 .error {
   color: red;
 }
