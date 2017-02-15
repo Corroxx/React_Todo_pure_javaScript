@@ -29,3 +29,7 @@ export const EducationList =(props) => {
     </div>
   )
 }
+
+EducationList.propTypes = {
+    educations: React.PropTypes.array.isRequired
+}

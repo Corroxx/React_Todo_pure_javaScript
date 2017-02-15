@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import {EducationForm, EducationList} from './components/educations/';
+import {EducationSearch, EducationList} from './components/educations/';
 import {findById, toggleEdu, updateEdu, filterTodoList, removeEdu} from './lib/educationHelpers';
 
 //const filteredTodos= filterTodoList([{name:'Beyer 1'},{name:'Novartis 1'},{name:'beyer2'}], 'no');
@@ -30,9 +30,8 @@ handleToggle = (id) => {
 	this.setState({educations: updatedEduList});
 }
 handleRemove = (id, evt) => {
-	console.log('handleRemove called',id)
+	//evt.preventDefault()
 	const updatedEduList = removeEdu(this.state.educations, id)
-	console.log(updatedEduList);
 	this.setState({educations: updatedEduList});
 
 }
@@ -44,7 +43,7 @@ handleRemove = (id, evt) => {
 					<h2>Sterr Apo Server</h2>
 				</div>
 				<div className="Todo-App">
-					<EducationForm	handleInputChange={this.handleInputChange}/>
+					<EducationSearch	handleInputChange={this.handleInputChange}/>
 					<div className="Schicker-list">
 					<EducationList
 						handleToggle={this.handleToggle}

@@ -18,7 +18,7 @@ export const EducationItem =(props) => {
       </td>
       <td><span
             className={props.changeable ? "open" : "close"}>
-          {props.changeable ? "Änderung möglich" : "Umfrage abgeschlossen"}
+          {props.changeable ? "anmelden" : "Anmeldung abgeschlossen"}
       </span></td>
       <td className="Remove-Row"><span className="delete-item" onClick={() => handleRemove(props.id)}>X</span></td>
 
@@ -26,3 +26,10 @@ export const EducationItem =(props) => {
 
   )
 }
+ EducationItem.propTypes = {
+     handleToggle : React.PropTypes.func.isRequired,
+     handleRemove: React.PropTypes.func.isRequired,
+     date: React.PropTypes.string.isRequired,
+     name: React.PropTypes.string.isRequired,
+     id: React.PropTypes.number.isRequired
+ }

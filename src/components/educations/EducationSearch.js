@@ -1,11 +1,12 @@
 import React from 'react';
 
-export const EducationForm= (props) => {
+export const EducationSearch= (props) => {
     return (
       <div>
-        <form>
           <input  placeholder="Suche" onChange={props.handleInputChange} type="text"></input>
-        </form>
       </div>
     )
+}
+EducationSearch.propTypes = {
+    handleInputChange: React.PropTypes.func.isRequired,
 }

@@ -1,2 +1,2 @@
-export {EducationForm} from './EducationForm';
+export {EducationSearch} from './EducationSearch';
 export {EducationList} from './EducationList';

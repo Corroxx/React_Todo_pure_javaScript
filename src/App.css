@@ -50,7 +50,7 @@ th, td {
      padding: 15px;
 }
 tbody tr:hover {
-    background-color: lightgrey;
+    background-color: #f0f0f0;
 }
  span.delete-item{
     visibility: hidden;
