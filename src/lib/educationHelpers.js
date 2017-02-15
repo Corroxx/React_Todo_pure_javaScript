@@ -13,13 +13,18 @@ export const updateEdu = (list, updated) => {
     ]
 }
 
+export const removeEdu = (list, id) => {
+    const removeIndex = list.findIndex(item => item.id === id)
+    return [
+        ...list.slice(0, removeIndex),
+        ...list.slice(removeIndex+1)
+    ]
+}
+
 export const filterTodoList = (list, searchText) => {
     var filteredList = list;
     var searchText = searchText.toLowerCase();
-    //console.log(stringLo);
     var filteredList= filteredList.filter((item) => {
-    //const itemNameLo = item.name.toLowerCase();
-    //console.log('itemName:', itemNameLo)
             const itemName = item.name.toLowerCase();
             return searchText.length=== 0 || itemName.indexOf(searchText)> -1
         }

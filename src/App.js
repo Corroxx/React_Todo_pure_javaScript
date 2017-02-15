@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import {EducationForm, EducationList} from './components/educations/';
-import {findById, toggleEdu, updateEdu, filterTodoList} from './lib/educationHelpers';
+import {findById, toggleEdu, updateEdu, filterTodoList, removeEdu} from './lib/educationHelpers';
 
 //const filteredTodos= filterTodoList([{name:'Beyer 1'},{name:'Novartis 1'},{name:'beyer2'}], 'no');
 //console.log(filteredTodos);
@@ -17,17 +17,24 @@ class App extends Component {
 			{id:4, date:"12.12.2017", name:"Novartis Fortbildung 1", location:"Kaufland", participate: true, changeable: true},
 			{id:5, date:"12.12.2017", name:"Bionorica Fortbildung 3", location:"Tor", participate: true, changeable: false}
 		],
-		textEntry:''
+		searchText:''
 	}
 handleInputChange = (evt) => {
 	evt.preventDefault();
-	this.setState({textEntry: evt.target.value})
+	this.setState({searchText: evt.target.value})
 }
 handleToggle = (id) => {
 	const edu = findById(this.state.educations, id)
 	const toggledEdu = toggleEdu(edu);
 	const updatedEduList = updateEdu(this.state.educations, toggledEdu);
 	this.setState({educations: updatedEduList});
+}
+handleRemove = (id, evt) => {
+	console.log('handleRemove called',id)
+	const updatedEduList = removeEdu(this.state.educations, id)
+	console.log(updatedEduList);
+	this.setState({educations: updatedEduList});
+
 }
 	render() {
 		return (
@@ -41,7 +48,8 @@ handleToggle = (id) => {
 					<div className="Schicker-list">
 					<EducationList
 						handleToggle={this.handleToggle}
-						educations={filterTodoList(this.state.educations, this.state.textEntry)}/>
+						handleRemove = {this.handleRemove}
+						educations={filterTodoList(this.state.educations, this.state.searchText)}/>
 					</div>
 				</div>
 			</div>

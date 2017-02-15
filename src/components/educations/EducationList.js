@@ -20,6 +20,7 @@ export const EducationList =(props) => {
       {props.educations.map(item =>
         <EducationItem
           handleToggle={props.handleToggle}
+          handleRemove = {props.handleRemove}
           key={item.id}
           {...item}
           className="Education-item"/>)}
