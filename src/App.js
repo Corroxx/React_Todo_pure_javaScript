@@ -14,7 +14,7 @@ class App extends Component {
 			{id:1, date:"12.12.2017", name:"Beyer Fortbildung 1", location:"Kaufland", participate: true, changeable: false},
 			{id:2, date:"12.12.2017", name:"Beyer Fortbildung 2", location:"Kaufland", participate: false, changeable: true},
 			{id:3, date:"12.12.2017", name:"Beyer Fortbildung 3", location:"Kaufland", participate: true, changeable: false},
-			{id:4, date:"12.12.2017", name:"Novartis Fortbildung 1", location:"Kaufland", participate: true, changeable: false},
+			{id:4, date:"12.12.2017", name:"Novartis Fortbildung 1", location:"Kaufland", participate: true, changeable: true},
 			{id:5, date:"12.12.2017", name:"Bionorica Fortbildung 3", location:"Tor", participate: true, changeable: false}
 		],
 		textEntry:''
@@ -24,8 +24,10 @@ handleInputChange = (evt) => {
 	this.setState({textEntry: evt.target.value})
 }
 handleToggle = (id) => {
-	console.log('toggled')
-
+	const edu = findById(this.state.educations, id)
+	const toggledEdu = toggleEdu(edu);
+	const updatedEduList = updateEdu(this.state.educations, toggledEdu);
+	this.setState({educations: updatedEduList});
 }
 	render() {
 		return (

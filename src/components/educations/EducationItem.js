@@ -9,10 +9,11 @@ export const EducationItem =(props) => {
       <td>{props.name}</td>
       <td className="Edu-checkin">
           <input
-          disabled={props.changeable ? '' : "disabled"}
-          onChange={()=> handleToggle(props.id)}
-          defaultChecked={props.participate}
-          type="checkbox"/>
+              type="checkbox"
+              disabled={props.changeable ? '' : "disabled"}
+              onChange={()=> handleToggle(props.id)}
+              defaultChecked={props.participate}
+            />
       </td>
       <td><span
             className={props.changeable ? "open" : "close"}>
